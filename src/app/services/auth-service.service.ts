@@ -15,11 +15,13 @@ export class AuthServiceService {
     // creating base64 encoded String from user name and password
     var base64Credential: string = btoa( user.username+ ':' + user.password);
     headers.append("Authorization", "Basic " + base64Credential);
+    headers.append("username",user.username);
+    headers.append("password",user.password);
 
     let options = new RequestOptions();
     options.headers=headers;
 
-    return this.http.get(AppComponent.API_URL+"/api/user/" ,   options)
+    return this.http.get(AppComponent.API_URL+"/api/user/authenticate" ,   options)
       .map((response: Response) => {
       // login successful if there's a jwt token in the response
       let user = response.json().principal;// the returned user object is a principal object

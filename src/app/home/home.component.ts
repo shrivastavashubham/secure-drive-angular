@@ -2,6 +2,12 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AuthServiceService} from "../services/auth-service.service";
 import {User} from "../model/model.user";
 import {Router} from "@angular/router";
+import { FaqComponent } from '../faq/faq.component';
+import { AboutusComponent } from '../aboutus/aboutus.component';
+import { ContactComponent } from '../contact/contact.component';
+import { ChangeComponent } from '../change/change.component';
+import { VerifyComponent } from '../verify/verify.component';
+import { VerifyUserComponent } from '../verify-user/verify-user.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

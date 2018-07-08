@@ -11,6 +11,12 @@ import { UrlPermission } from "app/urlPermisssion/url.permission";
 import { SignupComponent } from './signup/signup.component';
 import { HttpModule } from "@angular/http";
 import {QuestionsService} from "./services/questions.service";
+import { FaqComponent } from './faq/faq.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
+import { ChangeComponent } from './change/change.component';
+import { VerifyComponent } from './verify/verify.component';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
 
 
 @NgModule({
@@ -18,7 +24,13 @@ import {QuestionsService} from "./services/questions.service";
     AppComponent,
     LoginComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    FaqComponent,
+    AboutusComponent,
+    ContactComponent,
+    ChangeComponent,
+    VerifyComponent,
+    VerifyUserComponent
   ],
   imports: [
     BrowserModule,

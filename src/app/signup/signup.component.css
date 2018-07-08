@@ -5,8 +5,9 @@ body, html {
 }
 
 .card-container.card {
-  max-width: 350px;
-  padding: 40px 40px;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 60px 60px;
 }
 
 .btn {
@@ -135,4 +136,14 @@ body, html {
 .forgot-password:active,
 .forgot-password:focus{
   color: rgb(12, 97, 33);
+}
+label {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:5px;
+}
+
+input, label {
+    float:left;
 }

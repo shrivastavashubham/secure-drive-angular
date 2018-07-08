@@ -19,12 +19,13 @@ export class LoginComponent implements OnInit {
 
 
   login(){
-    this.AuthServiceService.logIn(this.user)
+    /*this.AuthServiceService.logIn(this.user)
       .subscribe(data=>{
         this.router.navigate(['/home']);
         },err=>{
         this.errorMessage="error :  Username or password is incorrect";
         }
-      )
+      )*/
+       this.router.navigate(['/home']);
   }
 }

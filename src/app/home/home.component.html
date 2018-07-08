@@ -1,105 +1,106 @@
-<nav  class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
 
-    <ul class="nav navbar-nav">
-      <li class="active"  ><a>Home</a></li>
+  
+    <div id="banner" class="banner" style="text-align: center;">
+      <h1>
+        <img src="smartvault_banner.jpg" style="width: 50px;height: 10px" /></h1>
+    </div>
+    <table border="1" style="width: 100%;height:10%">
 
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
+      <tr>
+        <!--<td>Welcome {{currentUser.username}} &nbsp;&nbsp;| &nbsp;&nbsp;-->
+          <td>Welcome Paresh21 &nbsp;&nbsp;| &nbsp;&nbsp;
+          <a [routerLink]="['/login']" class="btn btn-link button-clear comp back">Logout</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a [routerLink]="['/change']">settings</a>&nbsp;&nbsp;| &nbsp;&nbsp;
+            <a [routerLink]="['/faq']">FAQ</a>&nbsp;&nbsp; |&nbsp;&nbsp;
+            <a [routerLink]="['/contact']">Contact Us</a>&nbsp;&nbsp;|
+            <a [routerLink]="['/About']">About</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <hr style="height: 6px; background-color: #000000;" /><br>
+    <!--<form name="home" method="post" action="databaseopServlet">-->
+      Create New Folder<br> Folder Name :<input type="text" name="folder_ip" id="folder_ip" />&nbsp;
+      <input type="submit" value="create" name="button" class="btn button-clear comp back" />&nbsp;
+      
+     <!--</form>-->
 
-      <li><a href="#"><span class="glyphicon glyphicon-log-in" (click)="logOut()"></span> LogOut</a></li>
-    </ul>
+   <!--  <form name="home1" method="post" action="uploadServlet" enctype="multipart/form-data">-->
+
+      <select id="ch_user1" class="ch_user1" name="combo1">
+ 
+            <option id ="op" name="op" class="op" value="folder">folder</option>
+             <option id ="op" name="op" class="op" value="folder">OfficeDocs</option>
+             <option id ="op" name="op" class="op" value="folder">MSC Pracs</option>
+        </select>
+      <input type="submit" value="open" name="btn" id="downbtt" onclick="return checkdd()" class="btn button-clear comp back" />
+      <input type="submit" value="upload" name="button" onclick="return checkup()" class="btn button-clear comp back" />
+      <input type="file" name="file" id="file"class="button-clear comp back">
+   <!--  </form>-->
+
   </div>
 </nav>
 
 <div class="container">
 
-  <!-- Jumbotron Header -->
-  <header class="jumbotron my-4">
-    <h1 class="display-3">  <strong>{{currentUser.username}}</strong>, Welcome to your app </h1>
-    <p class="lead"> welcome to your profile
-    </p>
+ 
+    
     <div class="row">
 
 
-<div id="header">
-<!--
-        <div id="banner" class="banner"> <center><h1>
-        <img src="smartvault_banner.jpg" style="width: 50px;height: 10px" /></h1></center></div>
-            <table  border="1" style="width: 100%;height:10%">
-             
-                <tr>
-                    <td><center style="height: 24px">Welcome ${currentSessionUser.username} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                    <a href="Login.jsp">Logout</a></center> </td>
-                </tr>
-                <tr>
-                    <td><center><a href="changepwd.jsp">settings</a>&nbsp;&nbsp;|
-                    &nbsp;&nbsp;<a href="faq.jsp">FAQ</a>&nbsp;&nbsp;
-                    |&nbsp;&nbsp;<a href="contact.jsp">Contact Us</a>&nbsp;&nbsp;|
-                    <a href="about.jsp">About</a></center></td>
-                </tr>
-            </table>
+
+      <form method="post" action="downloadServlet">
+        <div id="main">
+          <table id="foldertable" border="1" style="width:100%;height: 441px">
+            <tr>
+              <td style="width: 161px;" valign="top">
+                <h4>Folders :-</h4>
+
+                <ul id="folder_list">
+
+                  <li>Project</li>
+                  <li>Personal</li>
+                  <li>OfficeDocs</li>
+                  <li>Photos</li>
+                  <li>MSC Pracs</li>
+
+                </ul>
+              </td>
+              <td valign="top">
+                <h4>Files in MSC Pracs:-</h4>
+                <div id="showfiles">
+
+
+                  <ul>
+
+                    <li>
+                     <a href="changepwd.jsp"> Nomanclature.txt</a>
+                    </li>
+                    <li>
+                      <a href="changepwd.jsp">formans_theory.jsp</a>
+                    </li>
+
+                  </ul>
+
+                </div>
+              </td>
+            </tr>
+            <tr>
+              
+            </tr>
+            
+          </table>
+          
         </div>
-        
-         <hr style="height: 6px; background-color: #000000;" /><br>
-         <form name="home" method="post" action="databaseopServlet">
-         <center>Create New Folder<br> 
-         Folder Name :<input type="text" name="folder_ip" id="folder_ip"/>&nbsp;
-         <input type="submit" value="create" name="button" class="btn"/>&nbsp;
-         <select id="ch_user2" class="ch_user2" name="combo2">
-   
-            <option id ="op1" value="${folder_name}">${folder_name}</option>
 
-        </select>
-          </center>
-         </form>
-         
-         <form name="home1" method="post" action="uploadServlet" enctype="multipart/form-data">
-         <center>
-         <select id="ch_user1" class="ch_user1" name="combo1">
- 
-            <option id ="op" name="op" class="op" value="rs1.getString("folder")"><%=rs1.getString("folder")%></option>
-        </select>
-        <input type="submit" value="open" name="btn" id="downbtt" onclick="return checkdd()" class="btn"/>
-          <input type="submit" value="upload" name="button" onclick="return checkup()" class="btn"/>
-          <input type="file" name="file" id="file">
-          </center>
-        </form>
-       
-       <form method="post" action="downloadServlet">
-    <div id="main">
-    <table id="foldertable" border="1" style="width:100%;height: 441px">
-    <tr>
-    <td style="width: 161px;" valign="top">
-    <h4>Folders :-</h4>
-    
-     <ul id="folder_list">
-
-  			<li><%=rs1.getString("folder")%></li>
-
-    			</ul>
-    </td>
-    <td valign="top">
-    <h4>Files in <%=session.getAttribute("F")%> :-</h4>
-      <div id="showfiles">
-
-
-      <ul>
-  
-  			<li><%=rs2.getString("file_name")%></li>
-
-      </ul>
-      
-      </div>
-    </td>
-    </tr>
-    <tr>
-    </tr>
-    </table>
+       </form>
     </div>
-    
-    <div id="bottom">
-    <center><h5>designed by:Paresh Vengurlekar & Pooja Kathkar</h5></center>
-    </div>
-    </form>    
--->
+
+</div>
