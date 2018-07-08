@@ -10,7 +10,6 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChangeComponent } from './change/change.component';
 import { VerifyComponent } from './verify/verify.component';
-import { VerifyUserComponent } from './verify-user/verify-user.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },

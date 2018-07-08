@@ -16,7 +16,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
 import { ChangeComponent } from './change/change.component';
 import { VerifyComponent } from './verify/verify.component';
-import { VerifyUserComponent } from './verify-user/verify-user.component';
+import { UploadFileService } from './services/upload-file.service';
 
 
 @NgModule({
@@ -30,7 +30,6 @@ import { VerifyUserComponent } from './verify-user/verify-user.component';
     ContactComponent,
     ChangeComponent,
     VerifyComponent,
-    VerifyUserComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,7 @@ import { VerifyUserComponent } from './verify-user/verify-user.component';
      HttpModule,FormsModule,
      
   ],
-  providers: [AuthServiceService,AccountService,UrlPermission, QuestionsService],
+  providers: [AuthServiceService,AccountService,UrlPermission, QuestionsService, UploadFileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
