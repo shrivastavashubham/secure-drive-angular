@@ -4,6 +4,8 @@ import {AccountService} from "../services/account.service";
 import {Router} from "@angular/router";
 import {QuestionsService} from "../services/questions.service";
 import {Questions} from "../model/model.Questions";
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-signup',
@@ -27,7 +29,7 @@ export class SignupComponent implements OnInit {
 
   register() {
     this.accountService.createAccount(this.user).subscribe(data => {
-      this.QuestionsService.FillQuestions(this.Questions)
+    //  this.QuestionsService.FillQuestions(this.Questions)
         this.router.navigate(['/login']);
       }, err => {
         console.log(err);

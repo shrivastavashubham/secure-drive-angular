@@ -1,4 +1,4 @@
-export class Questions{
+export class folder{
   id : number;
 folder_name: string="";
 level:number;

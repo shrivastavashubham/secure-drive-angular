@@ -10,6 +10,8 @@ import { VerifyComponent } from '../verify/verify.component';
 import { UploadFileService } from '../services/upload-file.service';
 import { HttpClient, HttpResponse, HttpEventType } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http/src/response';
+import { FormsModule } from '@angular/forms';
+import { FileService } from '../services/file.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +22,7 @@ import { HttpErrorResponse } from '@angular/common/http/src/response';
 export class HomeComponent implements OnInit {
  currentUser: User;
   httpService: any;
-  FileList: string[];
+  FolderList: string[];
   selected = null;
   constructor(public AuthServiceService: AuthServiceService, public router: Router, public uploadService: UploadFileService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -30,14 +32,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     //For dropdown
-    this.httpService.get('http://localhost:8080/api/files/').subscribe(
-      data => {
-        this.FileList = data as string [];		// FILL THE ARRAY WITH DATA.
-      },
-      (err: HttpErrorResponse) => {
-        console.log (err.message);
-      }
-    );
+    // this.httpService.get('http://localhost:8080/api/folder/getroot').subscribe(
+    //   data => {
+    //     this.FolderList = data as string [];		// FILL THE ARRAY WITH DATA.
+    //   },
+    //   (err: HttpErrorResponse) => {
+    //     console.log (err.message);
+    //   }
+    // );
+     getFiles(user.id)
   }
 
 // login out from the app

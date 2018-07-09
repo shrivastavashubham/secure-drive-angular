@@ -9,7 +9,7 @@ export class UploadFileService {
     pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
       const formdata: FormData = new FormData();
       formdata.append('file', file);
-      const req = new HttpRequest('POST', 'http://localhost:8089/profile/uploadpicture', formdata, {
+      const req = new HttpRequest('POST', 'http://localhost:8089/api/files/addFile', formdata, {
         reportProgress: true,
         responseType: 'text'
       }

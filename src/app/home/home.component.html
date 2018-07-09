@@ -9,8 +9,8 @@
     <table border="1" style="width: 100%;height:10%">
 
       <tr>
-        <!--<td>Welcome {{currentUser.username}} &nbsp;&nbsp;| &nbsp;&nbsp;-->
-          <td>Welcome Paresh21 &nbsp;&nbsp;| &nbsp;&nbsp;
+        <td>Welcome {{currentUser.username}} &nbsp;&nbsp;| &nbsp;&nbsp;
+          <!--<td>Welcome Paresh21 &nbsp;&nbsp;| &nbsp;&nbsp;-->
           <a [routerLink]="['/login']" class="btn btn-link button-clear comp back">Logout</a>
         </td>
       </tr>
@@ -32,19 +32,18 @@
       
      <!--</form>-->
 
-   <!--  <form name="home1" method="post" action="uploadServlet" enctype="multipart/form-data">-->
+    <form name="home1" enctype="multipart/form-data">
 
-      <select id="ch_user1" class="ch_user1" name="combo1" [(ngmodel)]="selected">
+      <select id="ch_user1" class="ch_user1" name="combo1" ngmodel="selected">
           <option *ngFor="let book of myBooks" [(ngValue)]="book.BookName">{{book.BookName}}</option>
             <option id ="op" name="op" class="op" value="folder" *ngFor="let book of myBooks" [(ngValue)]="book.BookName">folder</option>
-             <option id ="op" name="op" class="op" value="folder">OfficeDocs</option>
-             <option id ="op" name="op" class="op" value="folder">MSC Pracs</option>
+             
         </select>
-      <input type="submit" value="open" name="btn" id="downbtt" onclick="return checkdd()" class="btn button-clear comp back" />
+      <input type="submit" value="open" name="btn" id="downbtt"  class="btn button-clear comp back" />
       <input type="file" name="file" id="file"class="button-clear comp back" (change)="selectFile($event)">
-      <input type="submit" [disabled]="!selectedFiles" value="upload" name="button" click)="upload()" class="btn button-clear comp back" />
+      <input type="submit" [disabled]="!selectedFiles" value="upload" name="button" (click)="upload()" class="btn button-clear comp back" />
 
-   <!--  </form>-->
+ </form>
 
   </div>
 </nav>

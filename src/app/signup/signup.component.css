@@ -137,13 +137,22 @@ body, html {
 .forgot-password:focus{
   color: rgb(12, 97, 33);
 }
-label {
+.label {
     width:180px;
     clear:left;
     text-align:right;
     padding-right:5px;
 }
 
-input, label {
+.input, label {
     float:left;
+}
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
