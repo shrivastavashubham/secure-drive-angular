@@ -11,7 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ChangeComponent } from './change/change.component';
 import { VerifyComponent } from './verify/verify.component';
 
-const appRoutes: Routes = [
+const appRoutes: Routes = [{path :'', component:LoginComponent},
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },

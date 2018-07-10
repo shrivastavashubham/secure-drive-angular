@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     //     console.log (err.message);
     //   }
     // );
-     getFiles(user.id)
+    // getFiles(user.id)
   }
 
 // login out from the app

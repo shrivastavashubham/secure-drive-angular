@@ -51,12 +51,12 @@
         <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="user.lastName" #lastName="ngModel" required />
         <div *ngIf="f.submitted && !lastName.valid" class="help-block">The lastName Name is required</div>
       </div>
-     <!--
-       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !answer.valid }">
-        <label for="Question">{{Questions.question}}</label>
-        <input type="text" class="form-control" name="answer" id="answer" [(ngModel)]="Question.answer" #Question="ngModel" required />
-        <div *ngIf="f.submitted && !answer.valid" class="help-block">Please answer the following</div>
-      </div>-->
+
+      <li *ngFor="let question of listOfQuestion , let i =index, let answer of listOfAnswer">
+      {{question.question }}
+      <input type="text" class="form-control" name="answer{{i}}" id = "answer{{i}}" [(ngModel)]="answer[i]" #lastName="ngModel" required />
+     </li>
+     <!--this['question'+i] -->
       <div id="remember" class="checkbox">
 
       </div>
